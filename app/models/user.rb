@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  before_create :build_user_library
   has_one :library, dependent: :destroy
   
   attr_accessor :remember_token
@@ -40,5 +41,13 @@ class User < ActiveRecord::Base
   # Forgets a user.
   def forget
     update_attribute(:remember_digest, nil)
+  end
+
+  private
+  def build_user_library
+    # Build user library instance. Will use default params. One param (:main) is
+    # set explicitly. The foreign key to the owning Room model is set
+    build_library(:name => "#{name}'s Library")
+    true # Always return true in callbacks as the normal 'continue' state
   end
 end

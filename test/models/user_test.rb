@@ -74,7 +74,7 @@ class UserTest < ActiveSupport::TestCase
 
   test "associated library should be destroyed" do
     @user.save
-    @user.create_library!(name: "User Library")
+    #@user.create_library!(name: "User Library")
     assert_difference 'Library.count', -1 do
       @user.destroy
     end
