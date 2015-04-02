@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   #   resources :products
 
   resources :users
-  #resources :libraries
+  resources :libraries
   #resources :shelves
   #resources :books
 

@@ -1,7 +1,8 @@
 require 'test_helper'
 
 class LibrariesControllerTest < ActionController::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  
+  def setup
+    @library = libraries(:jacob_lib)
+  end
 end

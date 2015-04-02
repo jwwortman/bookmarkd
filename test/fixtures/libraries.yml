@@ -1,9 +1,25 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  user_id: 
+jacob_lib:
+  name: "Jacob Wortman's Library"
+  user: jacob
 
-two:
-  name: MyString
-  user_id: 
+mantis_lib:
+  name: "Mantis Toboggan's Library"
+  user: mantis
+
+ron_lib:
+  name: "Ron Swanson's Library"
+  user: mantis
+
+hans_lib:
+  name: "Hans Gruber's Library"
+  user: mantis
+
+<% 30.times do |n| %>
+library_<%= n %>:
+  name: "#{user_<%= n %>.name}'s Library"
+  user: user_<%= n %>
+<% end %>
+
+
