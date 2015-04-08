@@ -26,7 +26,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :libraries
-  #resources :shelves
+  resources :shelves
   #resources :books
 
   # Example resource route with options:

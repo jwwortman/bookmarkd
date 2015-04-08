@@ -24,4 +24,12 @@ class LibraryTest < ActiveSupport::TestCase
     @library.name = "a" * 101
     assert_not @library.valid?
   end
+
+  test "associated shelves should be destroyed" do
+    @library.save
+    @library.shelves.create!(name: "Shelf A", description: "Lorem ipsum")
+    assert_difference 'Shelf.count', -1 do
+      @library.destroy
+    end
+  end
 end

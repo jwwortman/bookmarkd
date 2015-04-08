@@ -10,6 +10,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @library = @user.library
+    @shelves = @library.shelves.paginate(page: params[:page])
+    @shelf = current_user.library.shelves.build if logged_in?
   end
 
   def new

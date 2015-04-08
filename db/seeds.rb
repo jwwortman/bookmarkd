@@ -21,3 +21,10 @@ User.create!(name: "Admin User",
                password: password,
                password_confirmation: password)
 end
+
+users = User.order(:created_at).take(6)
+50.times do
+  name = Faker::Lorem.word
+  description = Faker::Lorem.sentence(5)
+  users.each { |user| user.library.shelves.create!(name: name, description: description) }
+end

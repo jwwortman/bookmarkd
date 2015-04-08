@@ -204,20 +204,20 @@ input {
   }
 }
 
-/* library */
+/* library and shelf */
 
-.library {
+.shelves {
   list-style: none;
   padding: 0;
   li {
     padding: 10px 0;
     border-top: 1px solid #e8e8e8;
   }
-  .user {
+  .name {
     margin-top: 5em;
     padding-top: 0;
   }
-  .name {
+  .description {
     display: block;
     margin-left: 60px;
     img {
@@ -229,11 +229,6 @@ input {
     color: $gray-light;
     display: block;
     margin-left: 60px;
-  }
-  .gravatar {
-    float: left;
-    margin-right: 10px;
-    margin-top: 5px;
   }
 }
 

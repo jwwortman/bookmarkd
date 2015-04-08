@@ -1,0 +1,11 @@
+<li id="shelf-<%= shelf.id %>">
+  <span class="name"><%= link_to shelf.name, shelf %></span>
+  <span class="description"><%= shelf.description %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(shelf.created_at) %> ago.
+    <% if current_user?(shelf.library.user) %>
+      <%= link_to "delete", shelf, method: :delete,
+                                       data: { confirm: "You sure?" } %>
+    <% end %>
+  </span>
+</li>

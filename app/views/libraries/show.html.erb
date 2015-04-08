@@ -1,0 +1,9 @@
+<% provide(:title, @library.name) %>
+<h1><%= @library.name %></h1>
+<h2><strong>Owner:</strong> <%= @library.user.name %></h2>
+
+<% if @library.shelves.present? %>
+  <ul class="shelves">
+    <%= render @library.shelves %>
+  </ul>
+<% end %>

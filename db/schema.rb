@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150329141418) do
+ActiveRecord::Schema.define(version: 20150402233112) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,17 @@ ActiveRecord::Schema.define(version: 20150329141418) do
   end
 
   add_index "libraries", ["user_id"], name: "index_libraries_on_user_id", using: :btree
+
+  create_table "shelves", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "library_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "shelves", ["library_id", "created_at"], name: "index_shelves_on_library_id_and_created_at", using: :btree
+  add_index "shelves", ["library_id"], name: "index_shelves_on_library_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -38,4 +49,5 @@ ActiveRecord::Schema.define(version: 20150329141418) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
   add_foreign_key "libraries", "users"
+  add_foreign_key "shelves", "libraries"
 end
