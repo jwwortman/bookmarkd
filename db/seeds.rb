@@ -28,3 +28,12 @@ users = User.order(:created_at).take(6)
   description = Faker::Lorem.sentence(5)
   users.each { |user| user.library.shelves.create!(name: name, description: description) }
 end
+
+users = User.order(:created_at).take(6)
+50.times do
+  title = Faker::Lorem.word
+  author = Faker::Name.name
+  publisher = Faker::Lorem.word
+  isbn = Faker::Code.isbn
+  users.each { |user| user.library.books.create!(title: title, author: author, publisher: publisher, isbn: isbn) }
+end

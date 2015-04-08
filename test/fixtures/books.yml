@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+book_one:
+  title: "Book One"
+  author: "Author One"
+  publisher: "Publisher One"
+  isbn: "11111-11111"
+
+book_two:
+  title: "Book Two"
+  author: "Author Two"
+  publisher: "Publisher Two"
+  isbn: "22222-22222"
+
+book_one:
+  title: "Book Three"
+  author: "Author Three"
+  publisher: "Publisher Three"
+  isbn: "33333-33333"
+
+book_one:
+  title: "Book Four"
+  author: "Author Four"
+  publisher: "Publisher Four"
+  isbn: "44444-44444"
