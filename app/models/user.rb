@@ -43,7 +43,7 @@ class User < ActiveRecord::Base
     update_attribute(:remember_digest, nil)
   end
 
-  private
+  #private
   def build_user_library
     # Build user library instance. Will use default params. One param (:main) is
     # set explicitly. The foreign key to the owning Room model is set

@@ -32,12 +32,4 @@ class LibraryTest < ActiveSupport::TestCase
       @library.destroy
     end
   end
-
-  #test "associated books should be destroyed" do
-  #  @library.save
-  #  @library.books.create!(title: "Book Title", author: "Book Author", publisher: "Book Publisher", isbn: "00000-00000")
-  #  assert_difference 'Book.count', -1 do
-  #    @library.destroy
-  #  end
-  #end
 end

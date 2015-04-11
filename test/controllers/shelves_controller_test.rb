@@ -22,7 +22,8 @@ class ShelvesControllerTest < ActionController::TestCase
 
   test "should redirect destroy for wrong shelf" do
     log_in_as(users(:jacob))
-    shelf = shelves(:virusvideo)
+    library = shelves(:virusvideo).library
+    shelf = library.shelves.first
     assert_no_difference 'Shelf.count' do
       delete :destroy, id: shelf
     end

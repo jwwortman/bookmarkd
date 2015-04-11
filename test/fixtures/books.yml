@@ -5,21 +5,56 @@ book_one:
   author: "Author One"
   publisher: "Publisher One"
   isbn: "11111-11111"
+  #libraries: [jacob_lib]
 
 book_two:
   title: "Book Two"
   author: "Author Two"
   publisher: "Publisher Two"
   isbn: "22222-22222"
+  #libraries: [jacob_lib]
 
-book_one:
+book_three:
   title: "Book Three"
   author: "Author Three"
   publisher: "Publisher Three"
   isbn: "33333-33333"
+  #libraries: [jacob_lib]
 
-book_one:
+book_four:
   title: "Book Four"
   author: "Author Four"
   publisher: "Publisher Four"
   isbn: "44444-44444"
+  #libraries: [jacob_lib]
+
+#<% 30.times do |n| %>
+#book_<%= n %>:
+#  title: <%= Faker::Lorem.word %>
+#  author: <%= Faker::Name.name %>
+#  publisher: <%= Faker::Lorem.word %>
+#  isbn: <%= Faker::Code.isbn %>
+#  #libraries: [jacob_lib]
+#<% end %>
+
+#computers:
+#  title: "Computers"
+#  author: "Mantis Toboggan, M.D."
+#  publisher: "Paddy's Publishing"
+#  isbn: "12345-67890"
+#  libraries: [mantis_lib]
+
+#music:
+#  title: "Music"
+#  author: "Senor Bach"
+#  publisher: "Music Books"
+#  isbn: "55555-55555"
+#  libraries: [mantis_lib, ron_lib]
+
+#steak:
+#  title: "Steak"
+#  author: "Guy Person"
+#  publisher: "Good Book Publishing"
+#  isbn: "xxxxx-xxxxx"
+#  libraries: [ron_lib]
+

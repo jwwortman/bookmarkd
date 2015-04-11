@@ -1,0 +1,8 @@
+<%= simple_form_for @book do |f| %>
+  <%= f.input :title, placeholder: "Title of Book" %>
+  <%= f.input :author, placeholder: "Author(s)" %>
+  <%= f.input :publisher, placeholder: "Publisher" %>
+  <%= f.input :isbn, placeholder: "ISBN" %>
+  <%= f.association :shelves %>
+  <%= f.button :submit "Add Book to Your Library", class: "btn btn-primary"%>
+<% end %>

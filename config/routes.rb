@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  #root 'libraries#index'
   root 'welcome#home'
   
   # Example of regular route:
@@ -28,6 +27,7 @@ Rails.application.routes.draw do
   resources :libraries
   resources :shelves
   resources :books
+  #resources :catalogs, only: [:create, :destroy]
 
   # Example resource route with options:
   #   resources :products do

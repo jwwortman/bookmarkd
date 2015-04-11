@@ -32,7 +32,7 @@ class ShelvesController < ApplicationController
 
   private
     def shelf_params
-      params.require(:shelf).permit([:name, :description])
+      params.require(:shelf).permit(:name, :description)
     end
 
     def correct_user

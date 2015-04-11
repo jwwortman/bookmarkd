@@ -11,6 +11,7 @@ gem 'bcrypt'
 gem 'faker'
 gem 'bootstrap-will_paginate'
 gem 'tzinfo-data'
+gem 'simple_form'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
