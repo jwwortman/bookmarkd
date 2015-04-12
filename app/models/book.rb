@@ -1,6 +1,9 @@
 class Book < ActiveRecord::Base
   has_many :catalogs, dependent: :destroy
   has_many :libraries, :through => :catalogs, dependent: :destroy
+
+  has_many :bookshelves, dependent: :destroy
+  has_many :libraries, :through => :bookshelves, dependent: :destroy
   
   validates :title, presence: true, length: { maximum: 140 }
   validates :author, presence: true, length: { maximum: 140 }

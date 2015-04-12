@@ -1,5 +1,7 @@
 class Shelf < ActiveRecord::Base
   belongs_to :library
+  has_many :bookshelves, dependent: :destroy
+  has_many :books, :through => :bookshelves, dependent: :destroy
 
   default_scope -> { order(created_at: :desc) }
   

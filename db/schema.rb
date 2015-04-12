@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150411200933) do
+ActiveRecord::Schema.define(version: 20150412012902) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,15 @@ ActiveRecord::Schema.define(version: 20150411200933) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "bookshelves", force: :cascade do |t|
+    t.integer  "book_id"
+    t.integer  "shelf_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "bookshelves", ["book_id", "shelf_id"], name: "index_bookshelves_on_book_id_and_shelf_id", using: :btree
 
   create_table "catalogs", force: :cascade do |t|
     t.integer  "book_id"
