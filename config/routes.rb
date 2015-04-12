@@ -24,8 +24,16 @@ Rails.application.routes.draw do
   #   resources :products
 
   resources :users
-  resources :libraries
-  resources :shelves
+  resources :libraries do
+    member do
+      get :books, :shelves
+    end
+  end
+  resources :shelves do
+    member do
+      get :books
+    end
+  end
   resources :books
   #resources :catalogs, only: [:create, :destroy]
 

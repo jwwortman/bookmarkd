@@ -8,4 +8,16 @@ class Shelf < ActiveRecord::Base
   validates :library_id, presence: true
   validates :name, presence: true, length: { maximum: 100 }
   validates :description, presence: true, length: { maximum: 140 }
+
+  def add_to_shelf(a_book)
+    bookshelves.create(book_id: a_book.id)
+  end
+
+  def remove_from_shelf(a_book)
+    bookshelves.find_by(book_id: a_book.id).destroy
+  end
+
+  def books?(a_book)
+    books.include?(a_book)
+  end
 end

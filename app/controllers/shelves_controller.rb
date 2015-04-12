@@ -18,7 +18,7 @@ class ShelvesController < ApplicationController
     @shelf = current_user.library.shelves.build(shelf_params)
     if @shelf.save
       flash[:success] = "Shelf created!"
-      redirect_to @shelf.library.user
+      redirect_to current_user
     else
       render 'current_user'
     end

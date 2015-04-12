@@ -3,8 +3,8 @@
 <h2><strong>Library:</strong> <%= @shelf.library.name %></h2>
 <h2><strong>Description:</strong> <%= @shelf.description %></h2>
 
-<!--<% #if @shelf.books.present? %>
+<% if @shelf.books.present? %>
   <ul class="books">
     <%= render @shelf.books %>
   </ul>
-<% #end %>-->
+<% end %>

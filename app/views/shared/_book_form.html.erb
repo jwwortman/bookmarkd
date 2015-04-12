@@ -5,9 +5,12 @@
     <%= f.text_field :author, placeholder: "Author" %>
     <%= f.text_field :publisher, placeholder: "Publisher" %>
     <%= f.text_field :isbn, placeholder: "ISBN" %>
+
     <%= f.fields_for :catalogs do |ff| %>
       <%= ff.hidden_field :library_id %>
     <% end %>
+
+    <%= f.collection_select :shelf_ids, current_user.library.shelves.all, :id, :name, {:selected => @book.shelf_ids, :include_blank => true}, {:multiple => true} %>
   </div>
   <%= f.submit "Add Book to Library", class: "btn btn-primary" %>
 <% end %>

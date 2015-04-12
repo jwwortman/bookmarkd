@@ -5,7 +5,13 @@
 <h2><strong>ISBN:</strong> <%= @book.isbn %></h2>
 
 <% if @book.catalogs.present? %>
-  <ul class="shelves">
+  <ul class="libraries">
     <%= render @book.libraries %>
+  </ul>
+<% end %>
+
+<% if @book.bookshelves.present? %>
+  <ul class="shelves">
+    <%= render @book.shelves %>
   </ul>
 <% end %>

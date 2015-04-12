@@ -1,5 +1,19 @@
 <%= link_to gravatar_for(current_user, size: 75), current_user %>
 <h1><%= current_user.name %></h1>
 <span><%= link_to "edit my profile", edit_user_path(current_user) %></span>
-<span><%= pluralize(current_user.library.shelves.count, "shelf") %></span>
-<span><%= pluralize(current_user.library.books.count, "book") %></span>
+
+<% @user ||= current_user %>
+<div class="stats">
+  <a href="<%= books_library_path(@user.library) %>">
+    <strong id="books" class="stat">
+      <%= @user.library.books.count %>
+    </strong>
+    books
+  </a>
+  <a href="<%= shelves_library_path(@user.library) %>">
+    <strong id="shelves" class="stat">
+      <%= @user.library.shelves.count %>
+    </strong>
+    shelves
+  </a>
+</div> 

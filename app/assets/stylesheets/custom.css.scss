@@ -242,6 +242,42 @@ input {
   }
 }
 
+/* shelves */
+
+.shelves {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+  .name {
+    margin-top: 5em;
+    padding-top: 0;
+  }
+  .description {
+    display: block;
+  }
+  .timestamp {
+    color: $gray-light;
+    display: block;
+  }
+}
+
+aside {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
+  }
+}
+
+span.picture {
+  margin-top: 10px;
+  input {
+    border: 0;
+  }
+}
+
 /* books */
 
 .books {
@@ -257,16 +293,10 @@ input {
   }
   .author {
     display: block;
-    margin-left: 60px;
-    img {
-      display: block;
-      padding: 5px 0;
-    }
   }
-  .library {
+  .timestamp {
     color: $gray-light;
     display: block;
-    margin-left: 60px;
   }
 }
 
