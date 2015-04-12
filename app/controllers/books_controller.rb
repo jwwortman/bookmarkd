@@ -3,7 +3,7 @@ class BooksController < ApplicationController
   before_action :correct_user,   only: :destroy
 
   def index
-    @books = Book.paginate(page: params[:page])
+    @books = Book.paginate(page: params[:page]).order('title ASC')
   end
 
   def setup
@@ -15,10 +15,12 @@ class BooksController < ApplicationController
   end
 
   def create
-    @book = current_user.library.build(book_params)
-    if @shelf.save
+    @book = Book.new(book_params)
+    @library = current_user.library
+    @book.catalogs.build(:library_id => @library.id)
+    if @book.save
       flash[:success] = "Book added to library!"
-      redirect_to @book.library.user
+      redirect_to current_user
     else
       render 'current_user'
     end

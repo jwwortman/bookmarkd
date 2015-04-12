@@ -242,20 +242,20 @@ input {
   }
 }
 
-/* library and shelf */
+/* books */
 
-.shelves {
+.books {
   list-style: none;
   padding: 0;
   li {
     padding: 10px 0;
     border-top: 1px solid #e8e8e8;
   }
-  .name {
+  .title {
     margin-top: 5em;
     padding-top: 0;
   }
-  .description {
+  .author {
     display: block;
     margin-left: 60px;
     img {

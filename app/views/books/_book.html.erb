@@ -1,3 +1,8 @@
 <li id="book-<%= book.id %>">
-  <span class="title"><%= link_to book.title, book %></span>
+  <span class="title"><%= link_to book.title, book %>
+    <% if current_user.library.books?(book) %>
+      <%= link_to "delete", book, method: :delete,
+                                       data: { confirm: "You sure?" } %>
+    <% end %>
+  </span>
 </li>

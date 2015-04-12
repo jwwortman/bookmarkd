@@ -1,8 +1,13 @@
-<%= simple_form_for @book do |f| %>
-  <%= f.input :title, placeholder: "Title of Book" %>
-  <%= f.input :author, placeholder: "Author(s)" %>
-  <%= f.input :publisher, placeholder: "Publisher" %>
-  <%= f.input :isbn, placeholder: "ISBN" %>
-  <%= f.association :shelves %>
-  <%= f.button :submit "Add Book to Your Library", class: "btn btn-primary"%>
+<%= form_for(@book) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.text_field :title, placeholder: "Book Title" %>
+    <%= f.text_field :author, placeholder: "Author" %>
+    <%= f.text_field :publisher, placeholder: "Publisher" %>
+    <%= f.text_field :isbn, placeholder: "ISBN" %>
+    <%= f.fields_for :catalogs do |ff| %>
+      <%= ff.hidden_field :library_id %>
+    <% end %>
+  </div>
+  <%= f.submit "Add Book to Library", class: "btn btn-primary" %>
 <% end %>

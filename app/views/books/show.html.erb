@@ -4,8 +4,8 @@
 <h2><strong>Publisher:</strong> <%= @book.publisher %></h2>
 <h2><strong>ISBN:</strong> <%= @book.isbn %></h2>
 
-<% if @book.shelves.present? %>
+<% if @book.catalogs.present? %>
   <ul class="shelves">
-    <%= render @book.shelves %>
+    <%= render @book.libraries %>
   </ul>
 <% end %>

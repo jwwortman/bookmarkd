@@ -4,17 +4,20 @@
     <section class="user_info">
       <%= render 'shared/user_info' %>
     </section>
+    <section class="book_form">
+        <%= render 'shared/book_form' %>
+    </section>
     <section class="shelf_form">
-        <%= render 'shared/shelf_form' %>
+      <%= render 'shared/shelf_form' %>
     </section>
   </aside>
   <div class="col-md-8">
     <% if @user.library.present? %>
       <h3><%= link_to @user.library.name, library_path(@library) %></h3>
-      <ol class="shelves">
-        <%= render @shelves %>
+      <ol class="books">
+        <%= render @books %>
       </ol>
-      <%= will_paginate @shelves %>
+      <%= will_paginate @books %>
     <% end %>
   </div>
 </div>

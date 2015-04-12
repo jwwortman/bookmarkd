@@ -12,6 +12,8 @@ class UsersController < ApplicationController
     @library = @user.library
     @shelves = @library.shelves.paginate(page: params[:page])
     @shelf = current_user.library.shelves.build if logged_in?
+    @books = @library.books.paginate(page: params[:page]).order('title ASC')
+    @book = current_user.library.books.build if logged_in?
   end
 
   def new

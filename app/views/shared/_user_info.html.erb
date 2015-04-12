@@ -2,3 +2,4 @@
 <h1><%= current_user.name %></h1>
 <span><%= link_to "edit my profile", edit_user_path(current_user) %></span>
 <span><%= pluralize(current_user.library.shelves.count, "shelf") %></span>
+<span><%= pluralize(current_user.library.books.count, "book") %></span>
