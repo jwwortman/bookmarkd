@@ -12,19 +12,19 @@ User.create!(name: "Admin User",
              password_confirmation: "password",
              admin: true)
 
-99.times do |n|
-  name  = Faker::Name.name
-  email = "ex-#{n+1}@bookmarkdapp.com"
-  password = "password"
-  User.create!(name: name, 
-               email: email,
-               password: password,
-               password_confirmation: password)
-end
+#99.times do |n|
+#  name  = Faker::Name.name
+#  email = "ex-#{n+1}@bookmarkdapp.com"
+#  password = "password"
+#  User.create!(name: name, 
+#               email: email,
+#               password: password,
+#               password_confirmation: password)
+#end
 
-users = User.order(:created_at).take(6)
-50.times do
-  name = Faker::Lorem.word
-  description = Faker::Lorem.sentence(5)
-  users.each { |user| user.library.shelves.create!(name: name, description: description) }
-end
+#users = User.order(:created_at).take(6)
+#50.times do
+#  name = Faker::Lorem.word
+#  description = Faker::Lorem.sentence(5)
+#  users.each { |user| user.library.shelves.create!(name: name, description: description) }
+#end
