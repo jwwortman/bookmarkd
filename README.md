@@ -1,6 +1,6 @@
 == User manual
 
-This project runs off of a PostgreSQL database. Make sure that PostgreSQL and pgAdmin III is downloaded onto your computer before starting.
+This project uses a PostgreSQL database. Make sure that PostgreSQL and pgAdmin III are set up on your computer before beginning.
 
 * Extract .zip file from the CD
 
@@ -12,9 +12,9 @@ This project runs off of a PostgreSQL database. Make sure that PostgreSQL and pg
 
 * Under the Role privileges tab, make sure that the Superuser checkbox is checked and click OK
 
-* <tt>rake db:setup</tt> (make sure you are in the extracted project folder)
+* rake db:setup (make sure you are in the extracted project folder)
 
-* <tt>rails s</tt>
+* rails s
 
-* Open <tt>localhost:3000</tt> to interact with the application
+* Open localhost:3000 to interact with the application
 
