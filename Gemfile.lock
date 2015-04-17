@@ -1,6 +1,10 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    a2z (0.1.3)
+      crack
+      jeff (~> 0.6.4)
+      money
     actionmailer (4.2.0)
       actionpack (= 4.2.0)
       actionview (= 4.2.0)
@@ -36,6 +40,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    amazon_product (3.0.1)
+      nokogiri (~> 1.4)
     arel (6.0.0)
     autoprefixer-rails (5.1.8)
       execjs
@@ -59,6 +65,8 @@ GEM
       execjs
     coffee-script-source (1.8.0)
     columnize (0.9.0)
+    crack (0.4.2)
+      safe_yaml (~> 1.0.0)
     daemons (1.2.2)
     debug_inspector (0.0.2)
     devise (3.4.1)
@@ -70,6 +78,7 @@ GEM
       warden (~> 1.2.3)
     erubis (2.7.0)
     eventmachine (1.0.7)
+    excon (0.23.0)
     execjs (2.4.0)
     faker (1.4.3)
       i18n (~> 0.5)
@@ -82,6 +91,8 @@ GEM
     jbuilder (2.2.12)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
+    jeff (0.6.4)
+      excon (~> 0.23.0)
     jquery-rails (4.0.3)
       rails-dom-testing (~> 1.0)
       railties (>= 4.2.0)
@@ -94,6 +105,8 @@ GEM
     mime-types (2.4.3)
     mini_portile (0.6.2)
     minitest (5.5.1)
+    money (6.5.1)
+      i18n (>= 0.6.4, <= 0.7.0)
     multi_json (1.11.0)
     nokogiri (1.6.6.2-x86-mingw32)
       mini_portile (~> 0.6.0)
@@ -136,6 +149,7 @@ GEM
       json (~> 1.4)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
+    safe_yaml (1.0.4)
     sass (3.4.13)
     sass-rails (5.0.1)
       railties (>= 4.0.0, < 5.0)
@@ -174,6 +188,8 @@ GEM
     uglifier (2.7.1)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    vacuum (0.3.1)
+      jeff (~> 0.6.0)
     validates_email_format_of (1.6.2)
       i18n
     warden (1.2.3)
@@ -189,6 +205,8 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  a2z
+  amazon_product
   bcrypt
   bootstrap-sass
   bootstrap-will_paginate
@@ -211,6 +229,7 @@ DEPENDENCIES
   turbolinks
   tzinfo-data
   uglifier (>= 1.3.0)
+  vacuum
   validates_email_format_of
   web-console (~> 2.0)
   will_paginate

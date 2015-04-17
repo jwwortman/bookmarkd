@@ -21,9 +21,9 @@ class BooksController < ApplicationController
     if @book.save
       @book.catalogs.create(:library_id => @library.id)
       flash[:success] = "Book added to library!"
-      redirect_to current_user
+      redirect_to root_url
     else
-      render 'current_user'
+      render 'welcome/home'
     end
   end
 
@@ -35,7 +35,7 @@ class BooksController < ApplicationController
 
   private
     def book_params
-      params.require(:book).permit(:title, :author, :publisher, :isbn, shelf_ids: [])
+      params.require(:book).permit(:title, :author, :publisher, :isbn, :format, :location, shelf_ids: [])
     end
 
     def correct_user

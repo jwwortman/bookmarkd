@@ -1,6 +1,8 @@
 <li id="book-<%= book.id %>">
   <span class="title"><%= link_to book.title, book %></span>
   <span class="author"><%= book.author %></span>
+  <span class="type">Format: <%= book.format %></span>
+  <span class="type">Location: <%= book.location %></span>
   <span class="shelves">Shelves: <%= book.shelves.count %></span>
   <span class="timestamp">
     Added <%= time_ago_in_words(book.created_at) %> ago.

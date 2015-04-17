@@ -10,7 +10,11 @@ class Book < ActiveRecord::Base
   validates :title, presence: true, length: { maximum: 140 }
   validates :author, presence: true, length: { maximum: 140 }
   validates :publisher, presence: true, length: { maximum: 140 }
-  validates :isbn, presence: true, length: { maximum: 140 }
+  validates :isbn, presence: true
+  validates :format, presence: true
+  validates :location, presence: true, length: { maximum: 140 }
+
+  FORMAT_TYPES = ["Physical", "Digital", "Audio"]
 
   def add_to_book(a_shelf)
     bookshelves.create(shelf_id: a_shelf.id)
