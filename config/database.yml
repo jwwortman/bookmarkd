@@ -21,7 +21,7 @@ default: &default
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
   username: bookmarkd
-  password: JwW3600!
+  password: bookmarkd
   host: localhost
 
 development:
