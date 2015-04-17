@@ -1,28 +1,20 @@
-== README
+== User manual
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project runs off of a PostgreSQL database. Make sure that PostgreSQL and pgAdmin III is downloaded onto your computer before starting.
 
-Things you may want to cover:
+* Extract .zip file from the CD
 
-* Ruby version
+* In pgAdmin III, create a New Login Role...
 
-* System dependencies
+* Under the Properties tab, set the Role name field to 'bookmarkd'
 
-* Configuration
+* Under the Definition tab, set the Password and Password (again) fields to 'bookmarkd'
 
-* Database creation
+* Under the Role privileges tab, make sure that the Superuser checkbox is checked and click OK
 
-* Database initialization
+* <tt>rake db:setup</tt> (make sure you are in the extracted project folder)
 
-* How to run the test suite
+* <tt>rails s</tt>
 
-* Services (job queues, cache servers, search engines, etc.)
+* Open <tt>localhost:3000</tt> to interact with the application
 
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
